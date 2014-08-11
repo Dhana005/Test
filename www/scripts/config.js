@@ -14,15 +14,7 @@ require.config({
         jqm: 'libs/jquery.mobile/jquery.mobile-1.3.2',
         // jQuery Mobile plugin for Backbone views navigation
         jqmNavigator: 'libs/jquery.mobile/jqmNavigator'
-
     },
-
-    // map: {
-    //     '*': {
-    //         'app/models/rooms': 'app/models/getLocationFloorDetails/LocationFloorDetails'
-    //     }      
-    // },
-
 
     shim: {
         Backbone: {
@@ -66,20 +58,6 @@ require(['domReady', 'app/router', 'Backbone'], function(domReady, Router) {
             var router = new Router();
 
             Backbone.history.start();
-
-            // Hiding splash screen when app is loaded
-            // if (desktop !== true)
-            //      cordova.exec(null, null, 'SplashScreen', 'hide', []);
-
-            // Setting jQM pageContainer to #container div, this solves some jQM flickers & jumps
-            // I covered it here: http://outof.me/fixing-flickers-jumps-of-jquery-mobile-transitions-in-phonegap-apps/
-//            $.mobile.pageContainer = $('#container');
-//
-//            // Setting default transition to slide
-//            $.mobile.defaultPageTransition = 'slide';
-
-            // Pushing LoginView
-           // $.mobile.jqmNavigator.pushView(new LoginView());
         }
     });
 
