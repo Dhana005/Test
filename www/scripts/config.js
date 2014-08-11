@@ -42,7 +42,7 @@ require.config({
 });
 
 //require(['domReady', 'app/views/login/LoginView', 'jqm'], function(domReady, LoginView) {
-require(['domReady', 'jqm'], function(domReady) {
+require(['domReady', 'app/router', 'Backbone'], function(domReady, Router) {
 
 
     // domReady is RequireJS plugin that triggers when DOM is ready
@@ -61,16 +61,22 @@ require(['domReady', 'jqm'], function(domReady) {
         function onDeviceReady(desktop) {
             console.log("onDeviceReady Called.............");
 
+            var options = {};
+
+            var router = new Router();
+
+            Backbone.history.start();
+
             // Hiding splash screen when app is loaded
             // if (desktop !== true)
             //      cordova.exec(null, null, 'SplashScreen', 'hide', []);
 
             // Setting jQM pageContainer to #container div, this solves some jQM flickers & jumps
             // I covered it here: http://outof.me/fixing-flickers-jumps-of-jquery-mobile-transitions-in-phonegap-apps/
-            $.mobile.pageContainer = $('#container');
-
-            // Setting default transition to slide
-            $.mobile.defaultPageTransition = 'slide';
+//            $.mobile.pageContainer = $('#container');
+//
+//            // Setting default transition to slide
+//            $.mobile.defaultPageTransition = 'slide';
 
             // Pushing LoginView
            // $.mobile.jqmNavigator.pushView(new LoginView());
